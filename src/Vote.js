@@ -13,8 +13,8 @@ class Vote extends Component {
     }
 
     render() {
-        const resultContainerClass = this.state.isThankYouVisible ? 'collect-mood__result-container-active' : '';
-        const thankYouClass = this.state.isThankYouVisible ? 'collect-mood__thank-you-active' : '';
+        const resultContainerClass = this.state.isThankYouVisible ? 'vote__result-container-active' : '';
+        const thankYouClass = this.state.isThankYouVisible ? 'vote__thank-you-active' : '';
 
         return (
             <div className="vote">
