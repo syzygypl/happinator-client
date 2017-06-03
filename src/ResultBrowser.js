@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import runtimeEnv from '@mars/heroku-js-runtime-env';
-import PersonTextVariant from './PersonTextVariant';
 import './ResultBrowser.css';
 
 class ResultBrowser extends Component {
@@ -50,7 +49,7 @@ class ResultBrowser extends Component {
                 <div className="result-browser__average-label">dzisiejszy poziom zadowolenia</div>
                 <div className="result-browser__average">{this.state.averageHappinessLevel}/100</div>
                 <div className="result-browser__responses">{happinessDiffText}</div>
-                <div className="result-browser__responses">liczba uczestników: {this.state.participants} <PersonTextVariant value={this.state.participants}/></div>
+                <div className="result-browser__responses">liczba osób, które oddały głos: {this.state.participants}</div>
             </div>
         )
     }
