@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PersonTextVariant from './PersonTextVariant';
 import './ResultBrowser.css';
 
 const URL = 'http://syzygy-happiness.herokuapp.com';
@@ -16,8 +17,8 @@ class ResultBrowser extends Component {
             fetch(URL + '/happiness_levels/statistics')
                 .then((response) => (response.json()))
                 .then((json) => {
-                    this.setState({averageHappinessLevel: json.avg});
-                    this.setState({participants: json.total});
+                    this.setState({averageHappinessLevel: json.happiness.score || '-'});
+                    this.setState({participants: json.total || '-'});
                 });
         }, 1000);
     }
@@ -26,8 +27,8 @@ class ResultBrowser extends Component {
         return (
             <div className="result-browser">
                 <div className="result-browser__average-label">dzisiejszy poziom zadowolenia</div>
-                <div className="result-browser__average">{this.state.averageHappinessLevel}</div>
-                <div className="result-browser__responses">{this.state.participants} osoby odpowiedziały</div>
+                <div className="result-browser__average">{this.state.averageHappinessLevel}%</div>
+                <div className="result-browser__responses">liczba uczestników: {this.state.participants} <PersonTextVariant value={this.state.participants}/></div>
             </div>
         )
     }

@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import ResultBrowser from './ResultBrowser';
 import MoodCollector from './MoodCollector';
-import './CollectMood.css';
+import './Vote.css';
 
-class CollectMood extends Component {
+class Vote extends Component {
     constructor() {
         super();
 
@@ -17,12 +17,12 @@ class CollectMood extends Component {
         const thankYouClass = this.state.isThankYouVisible ? 'collect-mood__thank-you-active' : '';
 
         return (
-            <div className="collect-mood">
+            <div className="vote">
                 <MoodCollector onMoodSelected={this.handleOnMoodSelected.bind(this)}/>
-                <div className={`collect-mood__result-container ${resultContainerClass}`}>
-                    <div className={`collect-mood__thank-you ${thankYouClass}`}>
-                        <div className="collect-mood__thank-you-text">Dzięki!</div>
-                        <div className="collect-mood__thank-you-web">happinator.szg.io</div>
+                <div className={`vote__result-container ${resultContainerClass}`}>
+                    <div className={`vote__thank-you ${thankYouClass}`}>
+                        <div className="vote__thank-you-text">Dzięki!</div>
+                        <div className="vote__thank-you-web">happinator.szg.io</div>
                         <ResultBrowser />
                     </div>
                 </div>
@@ -36,4 +36,4 @@ class CollectMood extends Component {
     }
 }
 
-export default CollectMood;
+export default Vote;

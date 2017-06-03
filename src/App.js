@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 import ResultBrowser from './ResultBrowser';
-import CollectMood from './CollectMood';
+import Vote from './Vote';
 import './App.css';
 
 class App extends Component {
@@ -9,7 +9,7 @@ class App extends Component {
         return (
             <div className="app">
                 <Route exact path="/" component={ResultBrowser}/>
-                <Route path="/collect-mood" component={CollectMood}/>
+                <Route path="/vote" component={Vote}/>
             </div>
         );
     }
