@@ -1,0 +1,28 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+  font-size: 40pt;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button--happy {
+  background-color: #468847;
+}
+
+.button--neutral {
+  background-color: #f0ad4e;
+}
+
+.button--sad {
+  background-color: #880000;
+}
+
+.button--active {
+  background-color: grey;
+}

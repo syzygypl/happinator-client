@@ -1,0 +1,45 @@
+.collect-mood {
+  height: 100%;
+
+  &__result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  &__result-container-active {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__thank-you {
+    background-color: white;
+    border: 2px solid grey;
+    padding: 25px;
+    width: 75%;
+    height: 75%;
+    opacity: 0;
+    transition: opacity 1s;
+    text-align: center;
+  }
+
+  &__thank-you-text {
+    font-size: 30pt;
+  }
+
+  &__thank-you-web {
+    font-size: 10pt;
+  }
+
+  &__thank-you-active {
+    opacity: 1;
+  }
+}
+
