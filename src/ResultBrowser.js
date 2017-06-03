@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
+import runtimeEnv from '@mars/heroku-js-runtime-env';
 import PersonTextVariant from './PersonTextVariant';
 import './ResultBrowser.css';
-
-const URL = 'http://syzygy-happiness.herokuapp.com';
 
 class ResultBrowser extends Component {
     constructor() {
@@ -13,8 +12,12 @@ class ResultBrowser extends Component {
             participants: '-'
         };
 
+        const env = runtimeEnv();
+
+        console.log('API url:', env);
+
         setInterval(() => {
-            fetch(URL + '/happiness_levels/statistics')
+            fetch(env.API_URL + '/happiness_levels/statistics')
                 .then((response) => (response.json()))
                 .then((json) => {
                     this.setState({averageHappinessLevel: json.happiness.score || '-'});
