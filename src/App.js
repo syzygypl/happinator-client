@@ -27,7 +27,7 @@ class Happynator extends Component {
         const neutralClass = this.state.happinessLevel === NEUTRAL ? 'button--active' : '';
         const sadClass = this.state.happinessLevel === SAD ? 'button--active' : '';
 
-        return (<div className={`app`}>
+        return (<div className="happynator">
             <div className={`button button--happy ${happyClass}`} onClick={() => this.setHappinessLevel(HAPPY)}> :-)</div>
             <div className={`button button--neutral ${neutralClass}`} onClick={() => this.setHappinessLevel(NEUTRAL)}>:-|</div>
             <div className={`button button--sad ${sadClass}`} onClick={() => this.setHappinessLevel(SAD)}>:-(</div>
@@ -54,7 +54,7 @@ class Happynator extends Component {
 class App extends Component {
     render() {
         return (
-            <div>
+            <div className="app">
                 <Route exact path="/" component={ResultBrowser}/>
                 <Route path="/happynator" component={Happynator}/>
             </div>
