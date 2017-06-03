@@ -25,7 +25,7 @@ class MoodCollector extends Component {
             this.props.onMoodSelected();
         }, 200);
 
-        fetch(env.API_URL + '/happiness_levels', {
+        fetch(env.REACT_APP_API_URL + '/happiness_levels', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

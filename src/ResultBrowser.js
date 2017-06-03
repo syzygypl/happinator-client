@@ -17,7 +17,7 @@ class ResultBrowser extends Component {
         console.log('API url:', env);
 
         setInterval(() => {
-            fetch(env.API_URL + '/happiness_levels/statistics')
+            fetch(env.REACT_APP_API_URL + '/happiness_levels/statistics')
                 .then((response) => (response.json()))
                 .then((json) => {
                     this.setState({averageHappinessLevel: json.happiness.score || '-'});
