@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import runtimeEnv from '@mars/heroku-js-runtime-env';
 import './ResultBrowser.css';
 
 class ResultBrowser extends Component {
@@ -13,10 +12,8 @@ class ResultBrowser extends Component {
             lastParticipants: '-',
         };
 
-        const env = runtimeEnv();
-
         const updateHappiness = () => {
-            fetch(env.REACT_APP_API_URL + '/happiness_levels/statistics')
+            fetch(process.env.REACT_APP_API_URL + '/happiness_levels/statistics')
                 .then((response) => (response.json()))
                 .then((json) => {
                     this.setState({averageHappinessLevel: json.happiness.score || '-'});
@@ -28,7 +25,7 @@ class ResultBrowser extends Component {
         updateHappiness();
 
         const updateLastHappiness = () => {
-            fetch(env.REACT_APP_API_URL + '/happiness_levels/statistics/2017-06-02/2017-06-02')
+            fetch(process.env.REACT_APP_API_URL + '/happiness_levels/statistics/2017-06-02/2017-06-02')
                 .then((response) => (response.json()))
                 .then((json) => {
                     this.setState({lastAverageHappinessLevel: json.happiness.score || '-'});

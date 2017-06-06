@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
-import runtimeEnv from '@mars/heroku-js-runtime-env';
 import Button from './Button';
 import './MoodCollector.css';
-
-const env = runtimeEnv();
 
 const HAPPY = 'happy';
 const NEUTRAL = 'neutral';
@@ -25,7 +22,7 @@ class MoodCollector extends Component {
             this.props.onMoodSelected();
         }, 200);
 
-        fetch(env.REACT_APP_API_URL + '/happiness_levels', {
+        fetch(process.env.REACT_APP_API_URL + '/happiness_levels', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
